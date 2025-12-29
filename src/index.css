@@ -23,10 +23,11 @@ html, body {
   align-items: center;
   padding: 0 45px;
   background: teal;
-  color:white;
+  color: white;
 }
+
 .logo-font {
-  font-family: 'Carattere',Artistic;
+  font-family: 'Carattere', Artistic;
   font-size: 2.4rem;
   letter-spacing: 2px;
 }
@@ -38,9 +39,54 @@ html, body {
 }
 
 .nav-links a {
-  color:white;
+  color: white;
   text-decoration: none;
   font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    height: 100vh;
+    width: 200px;
+    background-color: teal;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    transition: right 0.3s;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
 
 /* ================= HOME PAGE ================= */
