@@ -23,6 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
+        <h1>hellooooo</h1>
 
       </CartProvider>
     
