@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./component/Header";
+import Footer from "./component/Footer";
 import FoodCard from "./component/FoodCard";
 import FoodData from "./data/FoodData";
 import Home from "./pages/Home";
@@ -10,28 +11,26 @@ import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import { CartProvider } from "./context/CartContext";
 import "./App.css";
-
-function App() {
-  return (
-      <CartProvider>
+function App(){
+return (
+    <CartProvider>
+      <div className="app-container">
         <Header />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-    
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </main>
 
-      </CartProvider>
-    
-  );
+        <Footer />
+      </div>
+    </CartProvider>
+);
 }
 
 export default App;
-
-
-
-

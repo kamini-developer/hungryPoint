@@ -8,8 +8,9 @@
 }
 
 html, body {
-  height: 100%;
-  overflow: hidden; 
+  min-height: 100%;
+  overflow-x: hidden; /* horizontal scroll hata do */
+  overflow-y: auto;
 
 
 }
@@ -97,9 +98,8 @@ html, body {
   padding: 30px;
   flex-wrap: wrap;
   justify-content: center;
-  overflow-y: auto; /* menu me scroll allowed */
+  overflow-y: hidden; 
 }
-
 .card {
   width: 220px;
   height: 300px;
@@ -173,8 +173,8 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  max-height: 500px; /* fixed height for scroll */
-  overflow-y: auto; /* enable vertical scroll */
+  /* max-height: 500px; fixed height for scroll */
+  /* overflow-y: auto; enable vertical scroll */
   padding-right: 10px;
 }
 
@@ -301,7 +301,7 @@ html, body {
   display: flex;
   justify-content: center;
 
-  overflow-y: auto; /* sirf about page me scroll */
+  overflow-y: hidden; /* sirf about page me scroll */
 }
 
 .about-container {
@@ -477,3 +477,62 @@ html, body {
   font-size: 16px;
   cursor: pointer;
 }
+/* ================= FOOTER ================= */
+
+.footer {
+  background: #172337;
+  color: #ffffff;
+  padding: 40px 20px 20px;
+  margin-top: 40px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer-col h4 {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #ff9f00;
+}
+
+.footer-col p {
+  font-size: 13px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  font-size: 13px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  color: #ddd;
+}
+
+.footer-col ul li:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* Mobile Responsive */
+ @media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+ }
