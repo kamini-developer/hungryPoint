@@ -186,34 +186,42 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
+/* ===== Filter + Search ===== */
 .menu-controls {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+  gap: 10px; /* spacing between filter buttons and search box */
 }
 
-.filter-box button {
-  margin-right: 10px;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color:  #4caf50;
-  color: #fff;
-  transition: background-color 0.3s;
+.filter-box {
+  display: flex;
+  flex-wrap: wrap; /* allows buttons to wrap */
+  gap: 10px; /* spacing between buttons */
 }
 
-.filter-box button.active,
-.filter-box button:hover {
-  background-color: #ccc;
+.search-box {
+  flex: 1 1 200px; /* allow search box to shrink/grow */
+  min-width: 150px; /* prevent it from getting too small */
 }
 
-.search-box input {
-  padding: 8px 12px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .menu-controls {
+    flex-direction: column; /* stack filter and search vertically */
+    align-items: stretch;
+  }
+
+  .filter-box {
+    justify-content: center; /* center buttons on small screens */
+  }
+
+  .search-box {
+    margin-top: 10px; /* space below buttons */
+  }
 }
+
 
 .food-container {
   display: flex;
