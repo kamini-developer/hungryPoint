@@ -92,7 +92,7 @@ html, body {
 
 /* ================= MENU ================= */
 .food-container {
-  height: calc(100vh - 80px);
+  height: calc(200vh - 80px);
   display: flex;
   gap: 25px;
   padding: 30px;
@@ -294,7 +294,7 @@ html, body {
 /* ================= ABOUT PAGE ================= */
 
 .about-page {
-  height: calc(100vh - 80px); /* header height minus */
+  height: calc(200vh - 80px); /* header height minus */
   padding: 50px 20px;
   background: linear-gradient(to right, #ffffff, #f8f9fa);
 
@@ -373,12 +373,12 @@ html, body {
     font-size: 1.05rem;
   }
 }
-.cart-wrapper {
+ .cart-wrapper {
   display: flex;
   gap: 20px;
   padding: 30px;
-  background: #f1f3f6;
-}
+  /* background: #f1f3f6; */
+ }
 
 /* LEFT */
 .cart-left {
