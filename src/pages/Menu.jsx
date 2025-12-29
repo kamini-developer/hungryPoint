@@ -2,12 +2,11 @@ import { useState } from "react";
 import FoodCard from "../component/FoodCard";
 import FoodData from "../data/FoodData";
 
-
 function Menu() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("all");
 
-  const filteredFood = FoodData.filter((item) => {
+  const filteredFood = FoodData.filter(item => {
     const matchesFilter = filter === "all" || item.category === filter;
     const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase());
     return matchesFilter && matchesSearch;
@@ -15,33 +14,17 @@ function Menu() {
 
   return (
     <div className="menu-page">
-      {/* Filter + Search */}
       <div className="menu-controls">
         <div className="filter-box">
-          <button
-            className={filter === "all" ? "active" : ""}
-            onClick={() => setFilter("all")}
-          >
-            All
-          </button>
-          <button
-            className={filter === "veg" ? "active" : ""}
-            onClick={() => setFilter("veg")}
-          >
-            Veg
-          </button>
-          <button
-            className={filter === "nonveg" ? "active" : ""}
-            onClick={() => setFilter("nonveg")}
-          >
-            Non-Veg
-          </button>
-          <button
-            className={filter === "coffee" ? "active" : ""}
-            onClick={() => setFilter("coffee")}
-          >
-            Coffee
-          </button>
+          {["all", "veg", "nonveg", "coffee"].map(f => (
+            <button
+              key={f}
+              className={filter === f ? "active" : ""}
+              onClick={() => setFilter(f)}
+            >
+              {f.charAt(0).toUpperCase() + f.slice(1)}
+            </button>
+          ))}
         </div>
         <div className="search-box">
           <input
@@ -53,10 +36,9 @@ function Menu() {
         </div>
       </div>
 
-      {/* Food Cards */}
       <div className="food-container">
         {filteredFood.length > 0 ? (
-          filteredFood.map((item) => <FoodCard key={item.id} food={item} />)
+          filteredFood.map(item => <FoodCard key={item.id} food={item} />)
         ) : (
           <p className="no-result">No food found 😔</p>
         )}
